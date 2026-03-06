@@ -1,48 +1,107 @@
-# PurePrompts.net - AI Prompts Gallery
+# 🚀 Awesome PurePrompts
 
-PurePrompts is an open-source AI Prompts Gallery ecosystem designed to discover, organize, and share high-quality prompts for various AI models.
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-blue?logo=tailwindcss)](https://tailwindcss.com/)
 
-## Features
+> Welcome to **PurePrompts.net** — an open-source AI Prompts Gallery ecosystem dedicated to discovering, organizing, and sharing high-quality prompts for various AI models like ChatGPT, Gemini, and Claude.
 
-- **Categorized Prompts**: Browse through different categories like Coding, Images, and General prompts.
-- **Advanced Filtering & Search**: Find the exact prompts matching your use case seamlessly.
-- **Dynamic Views**: Switching between grid and list layouts for improved readability.
-- **Image Prompt Builder**: A dedicated tool for crafting complex image generation prompts.
-- **Responsive Design**: Mobile-friendly interface optimized for all screen sizes.
-- **Trending & Latest**: Quickly discover the most popular and recently added prompts in the community.
+## [🌐 View in Web Gallery](http://localhost:3000) | [🏷️ Browse by Category](http://localhost:3000/categories)
 
-## Tech Stack
+---
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Typography**: Optimized with [Geist](https://vercel.com/font) through Next.js Font.
+## 📖 Table of Contents
 
-## Getting Started
+- [🤔 What is PurePrompts?](#-what-is-pureprompts)
+- [✨ Key Features](#-key-features)
+- [🔥 Featured Prompts](#-featured-prompts)
+- [💻 Getting Started (Local Dev)](#-getting-started-local-dev)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [📄 License & Acknowledgements](#-license--acknowledgements)
 
-First, run the development server:
+---
+
+## 🤔 What is PurePrompts?
+
+PurePrompts is a curated community gallery designed to help you extract the absolute best out of LLMs and generative AI. Whether you need a prompt to act as a Linux Terminal, a creative copywriter, or an expert programmer, this library provides ready-to-use templates.
+
+---
+
+## ✨ Key Features
+
+- **Categorized Prompts**: Browse through specific domains like Coding, Images, and General assistants.
+- **Advanced Filtering & Search**: Find the exact prompt matching your use case seamlessly.
+- **Dynamic Views**: Switch between grid and list layouts for improved readability.
+- **Image Prompt Builder**: A dedicated toolkit for crafting complex image generation prompts.
+- **Responsive Design**: Fast and mobile-friendly interface optimized for all screen sizes.
+
+---
+
+## 🔥 Featured Prompts
+
+Here are some of the community's favorite prompts available in the project's data layer:
+
+### ✨ No. 1: Linux Terminal
+>
+> **Prompt**: "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else..."<br/>
+> **Category**: Coding
+
+### ✨ No. 2: English Translator and Improver
+>
+> **Prompt**: "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version..."<br/>
+> **Category**: General
+
+### ✨ No. 3: Job Interviewer
+>
+> **Prompt**: "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the {Position} position. I want you to only reply as the interviewer..."<br/>
+> **Category**: General
+
+### ✨ No. 4: JavaScript Console
+>
+> **Prompt**: "I want you to act as a javascript console. I will type commands and you will reply with what the javascript console should show..."<br/>
+> **Category**: Coding
+
+---
+
+## 💻 Getting Started (Local Dev)
+
+Want to run the gallery locally? PurePrompts is built with the **Next.js App Router**.
+
+First, install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# or yarn dev / pnpm dev / bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the project by modifying `src/app/page.tsx`.
 
-You can start editing the project by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-## Learn More
+## 🤝 How to Contribute
 
-To learn more about the technologies used in this project, take a look at the following resources:
+We love contributions! The easiest way to contribute is by adding new high-quality prompts to our JSON data files located in `src/data/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Utility-first CSS framework.
+1. **Fork the repository**
+2. **Add your prompt** to `src/data/external-prompts.json` or `src/data/external-image-prompts.json` following the existing schema.
+3. **Submit a Pull Request** with a descriptive title!
 
-## Deployment
+### 🐛 Found a Bug?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new). Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you've spotted a UI issue or a broken link, please [open an issue](https://github.com/ariel-projects/prompts-catalog-mit/issues).
+
+---
+
+## 📄 License & Acknowledgements
+
+This project is licensed under the **MIT License**.
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+### ⭐ Support the Project
+
+If you find these prompts useful, please consider giving this repository a **Star**! It helps the project grow and reach more developers and creators.
