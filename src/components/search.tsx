@@ -4,15 +4,17 @@ import { Search as SearchIcon } from "lucide-react"
 
 interface SearchProps {
   onSearch?: (query: string) => void;
+  initialValue?: string;
 }
 
-export function Search({ onSearch }: SearchProps) {
+export function Search({ onSearch, initialValue = '' }: SearchProps) {
   return (
     <div className="relative w-full">
       <SearchIcon className="absolute left-0 top-3 h-5 w-5 text-muted-foreground" />
       <input
         type="search"
         placeholder="Search prompts..."
+        defaultValue={initialValue}
         onChange={(e) => onSearch?.(e.target.value)}
         className="h-12 w-full border-b border-border bg-transparent pl-8 pr-12 text-base font-mono text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:border-foreground disabled:cursor-not-allowed disabled:opacity-50"
       />

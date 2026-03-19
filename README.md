@@ -1,11 +1,11 @@
-# 🚀 Awesome PurePrompts
+# 🚀 PurePrompts
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-blue?logo=tailwindcss)](https://tailwindcss.com/)
 
-> Welcome to **PurePrompts.net** — an open-source AI Prompts Gallery ecosystem dedicated to discovering, organizing, and sharing high-quality prompts for various AI models like ChatGPT, Gemini, and Claude.
+> Welcome to **PurePrompts** — an open-source AI Prompts Gallery ecosystem dedicated to discovering, organizing, and sharing high-quality prompts for various AI models like ChatGPT, Gemini, and Claude.
 
 ## [🌐 View in Web Gallery](http://localhost:3000) | [🏷️ Browse by Category](http://localhost:3000/categories)
 
@@ -42,25 +42,33 @@ PurePrompts is a curated community gallery designed to help you extract the abso
 
 Here are some of the community's favorite prompts available in the project's data layer:
 
-### ✨ No. 1: Linux Terminal
->
-> **Prompt**: "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else..."<br/>
-> **Category**: Coding
+### ✨ No. 1: POV: Peaking Into The Crater Of A Volcano
 
-### ✨ No. 2: English Translator and Improver
->
-> **Prompt**: "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version..."<br/>
-> **Category**: General
+<img src="public/images/prompts/img-prompt-001.webp" alt="Crater Of A Volcano" width="400" />
 
-### ✨ No. 3: Job Interviewer
->
-> **Prompt**: "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the {Position} position. I want you to only reply as the interviewer..."<br/>
-> **Category**: General
+> **Prompt**: "A photorealistic POV image of a person peaking into the crater of a volcano. They are wearing weathered gloves and gripping onto the rocks in the foreground. Smoke is billowing out of the volcano. The location is a volcanic crater. Keep it in a 3:2 aspect ratio."  
+> **Category**: Images
 
-### ✨ No. 4: JavaScript Console
->
-> **Prompt**: "I want you to act as a javascript console. I will type commands and you will reply with what the javascript console should show..."<br/>
-> **Category**: Coding
+### ✨ No. 2: Double Exposure: Wolf Howling
+
+<img src="public/images/prompts/img-prompt-020.webp" alt="Wolf Howling" width="400" />
+
+> **Prompt**: "Create a double exposure image on a white background blending a silhouette of a wolf howling and a snowy forest under moonlight. The scene is contained within the silhouette."  
+> **Category**: Images
+
+### ✨ No. 3: Isometric Diorama: 1990s Teenage Bedroom
+
+<img src="public/images/prompts/img-prompt-025.webp" alt="1990s Teenage Bedroom" width="400" />
+
+> **Prompt**: "Generate a photorealistic image of a diorama, make sure it is isometric. It is of a 1990s teenage bedroom. Add objects related to retro gaming and posters but keep it minimalistic. The diorama sits on a wooden base."  
+> **Category**: Images
+
+### ✨ No. 4: Vintage Poster: Machu Picchu, Peru
+
+<img src="public/images/prompts/img-prompt-036.webp" alt="Machu Picchu" width="400" />
+
+> **Prompt**: "Generate a vintage travel poster of Machu Picchu, Peru. Include the name 'PERU' and 'MACHU PICCHU'. Worn texture, weathered edges. 2:3 format."  
+> **Category**: Images
 
 ---
 
@@ -96,7 +104,7 @@ If you've spotted a UI issue or a broken link, please [open an issue](https://gi
 
 ## 📄 License & Acknowledgements
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)

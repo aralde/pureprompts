@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useMemo } from "react"
-import { Copy, Wand2, X, Check } from "lucide-react"
+import { useState, useMemo, useEffect } from "react"
+import { Copy, Wand2, X, Check, Download } from "lucide-react"
 
 // --- Definición de las opciones ---
 const OPTIONS = {
@@ -74,6 +74,16 @@ const OPTIONS = {
 export function ImagePromptBuilder() {
   const [isOpen, setIsOpen] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [isTactioSource, setIsTactioSource] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('source') === 'tactio') {
+         setIsTactioSource(true);
+      }
+    }
+  }, []);
 
   // Estado del prompt
   const [selections, setSelections] = useState({
@@ -132,6 +142,16 @@ export function ImagePromptBuilder() {
     navigator.clipboard.writeText(finalPrompt)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  const handleImport = () => {
+    const promptData = {
+      title: "Image Prompt - " + (selections.subject || "Subject"),
+      content: finalPrompt,
+      tags: ["image", selections.style.toLowerCase()]
+    };
+    const uri = `tactio://add-prompt?data=${encodeURIComponent(JSON.stringify(promptData))}`;
+    window.location.href = uri;
   }
 
   const handleSelectChange = (key: keyof typeof selections, value: string) => {
@@ -297,15 +317,25 @@ export function ImagePromptBuilder() {
         <div className="p-5 bg-zinc-50 dark:bg-zinc-950/50 border-t border-zinc-200 dark:border-zinc-800">
           <label className="block text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Final Prompt Preview</label>
           <div className="relative">
-            <div className="w-full p-4 pr-32 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-mono text-zinc-800 dark:text-zinc-200 min-h-[80px] break-words shadow-inner">
+            <div className="w-full p-4 pr-[220px] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm font-mono text-zinc-800 dark:text-zinc-200 min-h-[80px] break-words shadow-inner">
               {finalPrompt}
             </div>
-            <button
-              onClick={handleCopy}
-              className="absolute top-3 right-3 p-2 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50 rounded-md transition-colors flex items-center gap-1 text-xs font-medium border border-blue-200 dark:border-blue-800 shadow-sm"
-            >
-              {copied ? <><Check className="w-3.5 h-3.5" /> Copied!</> : <><Copy className="w-3.5 h-3.5" /> Copy Prompt</>}
-            </button>
+            <div className="absolute top-3 right-3 flex gap-2">
+              <button
+                onClick={handleCopy}
+                className="p-2 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 dark:hover:bg-blue-900/50 rounded-md transition-colors flex items-center gap-1 text-xs font-medium border border-blue-200 dark:border-blue-800 shadow-sm"
+              >
+                {copied ? <><Check className="w-3.5 h-3.5" /> Copied!</> : <><Copy className="w-3.5 h-3.5" /> Copy Prompt</>}
+              </button>
+              {isTactioSource && (
+                  <button
+                    onClick={handleImport}
+                    className="p-2 bg-blue-600 text-white hover:bg-blue-700 rounded-md transition-colors flex items-center gap-1 text-xs font-medium border border-blue-700 shadow-sm"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Import
+                  </button>
+              )}
+            </div>
           </div>
         </div>
 

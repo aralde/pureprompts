@@ -1,6 +1,6 @@
 
 import { Prompt } from '@/lib/mock-data';
-import { X, Copy, Check } from 'lucide-react';
+import { X, Copy, Check, Download } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useState, useEffect } from 'react';
@@ -15,6 +15,16 @@ interface PromptDetailsModalProps {
 export function PromptDetailsModal({ prompt, isOpen, onClose }: PromptDetailsModalProps) {
   const [copied, setCopied] = useState(false);
   const [imageOrientation, setImageOrientation] = useState<'portrait' | 'landscape' | 'square' | null>(null);
+  const [isTactioSource, setIsTactioSource] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('source') === 'tactio') {
+         setIsTactioSource(true);
+      }
+    }
+  }, []);
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const { naturalWidth, naturalHeight } = e.currentTarget;
@@ -48,6 +58,16 @@ export function PromptDetailsModal({ prompt, isOpen, onClose }: PromptDetailsMod
     navigator.clipboard.writeText(prompt.content);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleImport = () => {
+    const promptData = {
+      title: prompt.title,
+      content: prompt.content,
+      tags: prompt.metadata.tags || []
+    };
+    const uri = `tactio://add-prompt?data=${encodeURIComponent(JSON.stringify(promptData))}`;
+    window.location.href = uri;
   };
 
   if (!isOpen) return null;
@@ -119,16 +139,27 @@ export function PromptDetailsModal({ prompt, isOpen, onClose }: PromptDetailsMod
                 ))}
             </div>
             
-            <button
-                onClick={handleCopy}
-                className={cn(
-                    "flex items-center gap-2 px-4 py-2 border border-border bg-background hover:bg-foreground hover:text-background transition-all font-mono text-sm font-bold rounded-md",
-                    copied && "border-green-500 text-green-500 hover:border-green-500 hover:text-green-500 hover:bg-background"
+            <div className="flex gap-2">
+                <button
+                    onClick={handleCopy}
+                    className={cn(
+                        "flex items-center gap-2 px-4 py-2 border border-border bg-background hover:bg-foreground hover:text-background transition-all font-mono text-sm font-bold rounded-md",
+                        copied && "border-green-500 text-green-500 hover:border-green-500 hover:text-green-500 hover:bg-background"
+                    )}
+                >
+                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                    {copied ? "COPIED" : "COPY PROMPT"}
+                </button>
+                {isTactioSource && (
+                    <button
+                        onClick={handleImport}
+                        className="flex items-center gap-2 px-4 py-2 border border-blue-600 bg-blue-600 hover:bg-blue-700 hover:border-blue-700 text-white transition-all font-mono text-sm font-bold rounded-md"
+                    >
+                        <Download className="w-4 h-4" />
+                        IMPORT TO TACTIO
+                    </button>
                 )}
-            >
-                {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                {copied ? "COPIED" : "COPY PROMPT"}
-            </button>
+            </div>
         </div>
       </div>
       

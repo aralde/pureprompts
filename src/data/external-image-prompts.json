@@ -190,25 +190,6 @@
     "url": "/images/prompts/img-prompt-010.webp"
   },
   {
-    "id": "img-prompt-011",
-    "title": "Miniature People: Construction Workers",
-    "content": "# Miniature People: Construction Workers\n\nA photo-realistic image of tiny construction workers repairing on a cracked eggshell. Macrophotography. Keep it in a 3:2 aspect ratio.",
-    "metadata": {
-      "description": "A photo-realistic image of tiny construction workers repairing on a cracked eggshell. Macrophotograp...",
-      "author": "Antigravity",
-      "version": "1.0",
-      "category": "Images",
-      "tags": [
-        "ai",
-        "image",
-        "midjourney",
-        "miniature-people"
-      ],
-      "globs": []
-    },
-    "url": "/images/prompts/img-prompt-011.webp"
-  },
-  {
     "id": "img-prompt-012",
     "title": "Miniature People: Skiers",
     "content": "# Miniature People: Skiers\n\nA photo-realistic image of tiny skiers skiing down on a scoop of vanilla ice cream. Macrophotography. Keep it in a 3:2 aspect ratio.",

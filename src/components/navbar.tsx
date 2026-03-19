@@ -13,7 +13,7 @@ export function Navbar() {
                 <Terminal className="w-5 h-5" />
             </div>
             <span className="text-lg font-bold font-mono tracking-tighter text-foreground">
-                PROMPTS_
+                PURE PROMPTS_
             </span>
           </a>
         </div>

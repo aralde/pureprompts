@@ -1,10 +1,11 @@
 "use client"
 
 import { Prompt } from '@/lib/mock-data';
-import { User, Copy, Check, FileCode, Eye } from 'lucide-react';
+import { User, Copy, Check, FileCode, Eye, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PromptDetailsModal } from './prompt-details-modal';
+import Image from 'next/image';
 
 interface PromptCardProps {
   prompt: Prompt;
@@ -14,6 +15,16 @@ interface PromptCardProps {
 export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
   const [copied, setCopied] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTactioSource, setIsTactioSource] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('source') === 'tactio') {
+         setIsTactioSource(true);
+      }
+    }
+  }, []);
 
   // We consider it an image prompt if it's explicitly in the 'Images' category,
   // which is how they are defined in external-image-prompts.json
@@ -26,6 +37,18 @@ export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
     navigator.clipboard.writeText(prompt.content);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleImport = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const promptData = {
+      title: prompt.title,
+      content: prompt.content,
+      tags: prompt.metadata.tags || []
+    };
+    const uri = `tactio://add-prompt?data=${encodeURIComponent(JSON.stringify(promptData))}`;
+    window.location.href = uri;
   };
 
   if (variant === "list") {
@@ -82,6 +105,15 @@ export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
             >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             </button>
+            {isTactioSource && (
+              <button
+                  onClick={handleImport}
+                  className="flex-shrink-0 flex items-center justify-center w-8 h-8 border border-blue-500/30 transition-all hover:bg-blue-500/10 text-blue-500 ml-2"
+                  title="Import to Tactio"
+              >
+                  <Image src="/tactio-logo-wt.svg" alt="Tactio" width={14} height={14} className="opacity-90" />
+              </button>
+            )}
             <button
                 onClick={() => setIsModalOpen(true)}
                 className="flex-shrink-0 flex items-center justify-center w-8 h-8 border border-border transition-all hover:bg-foreground hover:text-background ml-2"
@@ -123,9 +155,17 @@ export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
                  )}
                  title="Copy Prompt"
              >
-                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                 {copied ? "Copied" : "Copy Prompt"}
+                 {copied ? <Check className="w-4 h-4" /> : "Copy Prompt"}
              </button>
+             {isTactioSource && (
+                 <button
+                     onClick={handleImport}
+                     className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-600/80 backdrop-blur-sm border border-blue-400/30 transition-all hover:bg-blue-600 hover:scale-105 ml-2"
+                     title="Import to Tactio"
+                 >
+                     <Image src="/tactio-logo-wt.svg" alt="Tactio" width={14} height={14} />
+                 </button>
+             )}
           </div>
         </div>
         <PromptDetailsModal prompt={prompt} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -191,6 +231,15 @@ export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
                     >
                         {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
                     </button>
+                    {isTactioSource && (
+                        <button
+                            onClick={handleImport}
+                            className="flex items-center justify-center w-8 h-8 border border-blue-500/30 transition-all hover:bg-blue-500/10 text-blue-500 ml-2"
+                            title="Import to Tactio"
+                        >
+                            <Image src="/tactio-logo-wt.svg" alt="Tactio" width={12} height={12} className="opacity-90" />
+                        </button>
+                    )}
                     {/* View Button */}
                      <button
                         onClick={() => setIsModalOpen(true)}
