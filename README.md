@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/image.png" alt="PurePrompts Banner" width="100%" />
+</p>
+
 # 🚀 PurePrompts
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -98,7 +102,7 @@ We love contributions! The easiest way to contribute is by adding new high-quali
 
 ### 🐛 Found a Bug?
 
-If you've spotted a UI issue or a broken link, please [open an issue](https://github.com/ariel-projects/prompts-catalog-mit/issues).
+If you've spotted a UI issue or a broken link, please [open an issue](https://github.com/aralde/pureprompts/issues).
 
 ---
 
