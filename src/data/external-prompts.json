@@ -1,21 +1,5 @@
 [
   {
-    "id": "tactio-example-prompt",
-    "title": "Tactio ✨",
-    "content": "# Translate ✨\n\nTranslate text to English.",
-    "metadata": {
-      "description": "Translate to English.",
-      "author": "tactio",
-      "version": "1.0",
-      "category": "Tactio",
-      "tags": [
-        "tactio",
-        "favoritos"
-      ],
-      "globs": []
-    }
-  },
-  {
     "id": "linux-terminal",
     "title": "Linux Terminal",
     "content": "# Linux Terminal\n\nI want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. my first command is pwd",
@@ -20411,6 +20395,891 @@
         "external",
         "general",
         "assistant"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "text-humanizer",
+    "title": "Text Humanizer",
+    "content": "# Text Humanizer\n\nRewrite this text to sound like a natural human conversation, rather than a robotic or overly formal instruction.",
+    "metadata": {
+      "description": "Rewrite this text to sound like a natural human conversation.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "communication",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "grammar-corrector",
+    "title": "Grammar Corrector",
+    "content": "# Grammar Corrector\n\nFix grammar and spelling errors in the provided text without changing its original meaning.",
+    "metadata": {
+      "description": "Fix grammar and spelling errors in the provided text without changing its original meaning.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "english-translator",
+    "title": "English Translator",
+    "content": "# English Translator\n\nTranslate the provided text into highly professional and natural-sounding English.",
+    "metadata": {
+      "description": "Translate the provided text into highly professional and natural-sounding English.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "translation",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "markdown-formatter",
+    "title": "Markdown Formatter",
+    "content": "# Markdown Formatter\n\nFormat the provided text into a well-structured Markdown document, using appropriate headers, lists, and emphasis.",
+    "metadata": {
+      "description": "Format the provided text into a well-structured Markdown document.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "markdown",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "obsidian-note-creator",
+    "title": "Obsidian Note Formatter",
+    "content": "# Obsidian Note Formatter\n\nFormat this content into a well-structured Obsidian note, including YAML frontmatter with aliases and tags, and suggest bidirectional links for key concepts.",
+    "metadata": {
+      "description": "Format content into an Obsidian-compatible markdown note with YAML frontmatter.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "obsidian",
+        "pkm",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "text-summarizer",
+    "title": "Text Summarizer",
+    "content": "# Text Summarizer\n\nProvide a robust, concise summary of the provided text, structured as a brief overview followed by 3-5 key bullet points.",
+    "metadata": {
+      "description": "Provide a concise summary of the provided text using bullet points.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "code-explainer",
+    "title": "Code Explainer",
+    "content": "# Code Explainer\n\nExplain what the provided code snippet does step-by-step in plain English so a non-technical person can understand it.",
+    "metadata": {
+      "description": "Explain what the provided code snippet does step-by-step.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "regex-generator",
+    "title": "Regex Generator",
+    "content": "# Regex Generator\n\nGenerate an optimal regular expression based on the described pattern and provide a brief explanation of how it works.",
+    "metadata": {
+      "description": "Generate an optimal regular expression based on the described pattern.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "regex",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "bash-command-builder",
+    "title": "Bash Command Builder",
+    "content": "# Bash Command Builder\n\nGenerate the exact Bash command needed for the given task and explain the flags used.",
+    "metadata": {
+      "description": "Generate the exact Bash command needed for the given task.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "terminal",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "json-formatter",
+    "title": "JSON Formatter",
+    "content": "# JSON Formatter\n\nFormat, syntax-check, and prettify the provided JSON data. Point out any errors if the JSON is invalid.",
+    "metadata": {
+      "description": "Format, syntax-check, and prettify the provided JSON data.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "json",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "sql-query-writer",
+    "title": "SQL Query Writer",
+    "content": "# SQL Query Writer\n\nWrite an optimized SQL query based on the given description and schema, ensuring best practices.",
+    "metadata": {
+      "description": "Write an optimized SQL query based on the given description and schema.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "sql",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "dockerfile-generator",
+    "title": "Dockerfile Generator",
+    "content": "# Dockerfile Generator\n\nCreate a production-ready, highly optimized, multi-stage Dockerfile for the specified application stack.",
+    "metadata": {
+      "description": "Create a production-ready multi-stage Dockerfile for the specified stack.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "devops",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "git-commit-message",
+    "title": "Git Commit Message",
+    "content": "# Git Commit Message\n\nGenerate a descriptive, Conventional Commits-compliant Git commit message based on the provided code changes.",
+    "metadata": {
+      "description": "Generate a Conventional Commits-compliant Git commit message.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "git",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "csv-to-markdown-table",
+    "title": "CSV to Markdown Table",
+    "content": "# CSV to Markdown Table\n\nConvert the provided CSV data into a nicely formatted Markdown table.",
+    "metadata": {
+      "description": "Convert the provided CSV data into a Markdown table format.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "markdown",
+        "productivity",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "excel-formula-helper",
+    "title": "Excel Formula Helper",
+    "content": "# Excel Formula Helper\n\nProvide the exact Excel or Google Sheets formula for the described calculation and explain how it evaluates.",
+    "metadata": {
+      "description": "Provide the exact Excel or Google Sheets formula for the described calculation.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "spreadsheet",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "css-tailwind-converter",
+    "title": "CSS to Tailwind Converter",
+    "content": "# CSS to Tailwind Converter\n\nConvert the provided standard CSS style definitions into their equivalent modern Tailwind CSS utility classes.",
+    "metadata": {
+      "description": "Convert standard CSS style definitions into Tailwind CSS utility classes.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "css",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "html-to-jsx",
+    "title": "HTML to JSX Convertor",
+    "content": "# HTML to JSX Convertor\n\nConvert the provided HTML code snippet into React JSX format, replacing properties like `class` with `className` and self-closing tags.",
+    "metadata": {
+      "description": "Convert HTML code into React JSX format.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "react",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "python-docstring-generator",
+    "title": "Python Docstring Generator",
+    "content": "# Python Docstring Generator\n\nGenerate a comprehensive Google-style docstring for the provided Python function, including Args, Returns, and target typical usage.",
+    "metadata": {
+      "description": "Generate a comprehensive Google-style docstring for a Python function.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "python",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "jsdoc-generator",
+    "title": "JSDoc Generator",
+    "content": "# JSDoc Generator\n\nCreate detailed JSDoc comments for the given JavaScript/TypeScript function to improve IDE intelligence.",
+    "metadata": {
+      "description": "Create JSDoc comments for a JavaScript/TypeScript function.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "javascript",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "unit-test-scaffolder",
+    "title": "Unit Test Scaffolder",
+    "content": "# Unit Test Scaffolder\n\nScaffold unit tests for the provided function or class using standard testing libraries (Jest for JS, PyTest for Python) covering common edge cases.",
+    "metadata": {
+      "description": "Scaffold unit tests for a function or class covering edge cases.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "testing",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "variable-name-suggester",
+    "title": "Variable Name Suggester",
+    "content": "# Variable Name Suggester\n\nSuggest 5 descriptive, clean, and concise variable or function names for the described logic.",
+    "metadata": {
+      "description": "Suggest descriptive variable or function names for the described logic.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "code-refactoring-advisor",
+    "title": "Refactoring Advisor",
+    "content": "# Refactoring Advisor\n\nSuggest improvements to make the provided code cleaner, more efficient, fully typed, and robust, citing best practices.",
+    "metadata": {
+      "description": "Suggest improvements to make code cleaner, more robust, and efficient.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "cron-expression-explainer",
+    "title": "CRON Explainer",
+    "content": "# CRON Explainer\n\nExplain in plain English when the provided CRON expression runs, or generate a valid CRON expression given a specific schedule description.",
+    "metadata": {
+      "description": "Explain a CRON expression in plain English or generate one.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "api-endpoint-documenter",
+    "title": "API Documenter",
+    "content": "# API Documenter\n\nGenerate structured Markdown API documentation for the described endpoint, including path, method, headers, request body, and expected responses.",
+    "metadata": {
+      "description": "Generate Markdown API documentation for the described endpoint.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "api",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "error-log-analyzer",
+    "title": "Error Log Analyzer",
+    "content": "# Error Log Analyzer\n\nAnalyze this error log, explain the likely root cause in simple terms, and suggest actionable ways to fix it.",
+    "metadata": {
+      "description": "Analyze an error log, explain root causes, and suggest fixes.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "debugging",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "seo-meta-description",
+    "title": "SEO Meta Description",
+    "content": "# SEO Meta Description\n\nGenerate a compelling, strictly 150-character SEO-optimized meta description for the provided article content.",
+    "metadata": {
+      "description": "Generate an SEO meta description for the provided article content.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "seo",
+        "writing",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "blog-title-ideator",
+    "title": "Blog Title Ideator",
+    "content": "# Blog Title Ideator\n\nSuggest 5 highly clickable, emotionally resonant, and SEO-friendly titles for the described blog post topic.",
+    "metadata": {
+      "description": "Suggest 5 clickable and SEO-friendly titles for a blog post.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "seo",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "professional-tone-changer",
+    "title": "Professional Tone Changer",
+    "content": "# Professional Tone Changer\n\nRewrite the provided text to sound significantly more professional, formal, and authoritative without losing its core message.",
+    "metadata": {
+      "description": "Rewrite the text to sound significantly more professional and formal.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "communication",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "casual-tone-changer",
+    "title": "Casual Tone Changer",
+    "content": "# Casual Tone Changer\n\nRewrite the provided text to sound casual, friendly, and approachable like an informal Slack message.",
+    "metadata": {
+      "description": "Rewrite the text to sound casual, friendly, and approachable.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "communication",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "meeting-notes-cleaner",
+    "title": "Meeting Notes Cleaner",
+    "content": "# Meeting Notes Cleaner\n\nClean up these unformatted meeting notes into a structured summary containing Key Discussion Points, Decisions Made, and Action Items.",
+    "metadata": {
+      "description": "Clean up unformatted meeting notes into a structured summary.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "management",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "bullet-point-expander",
+    "title": "Bullet Point Expander",
+    "content": "# Bullet Point Expander\n\nExpand the following short bullet points into full, detailed, and flowing paragraphs perfect for an essay or article.",
+    "metadata": {
+      "description": "Expand short bullet points into full, detailed paragraphs.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "paragraph-summarizer",
+    "title": "Paragraph Summarizer",
+    "content": "# Paragraph Summarizer\n\nCondense this long paragraph into a single, punchy sentence capturing its exact essence.",
+    "metadata": {
+      "description": "Condense a long paragraph into a single, punchy sentence.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "email-reply-drafter-accept",
+    "title": "Email Reply (Accept)",
+    "content": "# Email Reply (Accept)\n\nDraft a polite, enthusiastic, and highly professional email replying to target effectively accept the provided invitation or request.",
+    "metadata": {
+      "description": "Draft a polite and professional email replying to accept an invitation.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "communication",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "email-reply-drafter-decline",
+    "title": "Email Reply (Decline)",
+    "content": "# Email Reply (Decline)\n\nDraft a polite, warm, and professional email replying to politely decline the provided invitation or request without burning bridges.",
+    "metadata": {
+      "description": "Draft a polite and professional email replying to decline an invitation.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "communication",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "interview-question-generator",
+    "title": "Interview Question Generator",
+    "content": "# Interview Question Generator\n\nGenerate 5 technical, behavioral, and architectural interview questions for a candidate based strictly on the provided job description.",
+    "metadata": {
+      "description": "Generate interview questions for a candidate based strictly on a job description.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "cover-letter-tailorer",
+    "title": "Cover Letter Tailorer",
+    "content": "# Cover Letter Tailorer\n\nTailor this generic cover letter to perfectly align with the specific job description and core requirements provided.",
+    "metadata": {
+      "description": "Tailor a generic cover letter to perfectly align with a job description.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "career",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "resume-bullet-improver",
+    "title": "Resume Bullet Improver",
+    "content": "# Resume Bullet Improver\n\nRewrite this resume bullet point using the STAR method (Situation, Task, Action, Result) combined with strong metric-driven action verbs.",
+    "metadata": {
+      "description": "Rewrite a resume bullet point using the STAR method format.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "career",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "code-comment-translator",
+    "title": "Code Comment Translator",
+    "content": "# Code Comment Translator\n\nTranslate all in-line comments and docstrings in the provided code snippet to English, leaving the actual code syntax unchanged.",
+    "metadata": {
+      "description": "Translate all in-line comments in a code snippet to English.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "translation",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "jira-ticket-creator",
+    "title": "Jira Ticket Creator",
+    "content": "# Jira Ticket Creator\n\nCreate a well-structured Jira ticket from this feature description, including a summary, background, implementation steps, and concrete Acceptance Criteria.",
+    "metadata": {
+      "description": "Create a well-structured Jira ticket from a feature description.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "agile",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "user-story-generator",
+    "title": "User Story Generator",
+    "content": "# User Story Generator\n\nTranslate these rough feature ideas into proper Agile user stories in the \"As a [persona], I want [action] so that [benefit]\" convention.",
+    "metadata": {
+      "description": "Translate rough feature ideas into proper Agile user stories.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "agile",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "release-notes-summarizer",
+    "title": "Release Notes Summarizer",
+    "content": "# Release Notes Summarizer\n\nTransform these raw, technical git commit messages into user-friendly, polished, and categorical release notes for a change log.",
+    "metadata": {
+      "description": "Transform raw git commit messages into user-friendly release notes.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "productivity",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "prompt-improver",
+    "title": "Prompt Improver",
+    "content": "# Prompt Improver\n\nCritique and vastly improve the provided prompt by maximizing context, specifying constraints, and shaping the ideal output structure to yield better, more accurate results from an LLM.",
+    "metadata": {
+      "description": "Improve provided prompt to yield better, more accurate results from an LLM.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "prompt-engineering",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "time-complexity-analyzer",
+    "title": "Time Complexity Analyzer",
+    "content": "# Time Complexity Analyzer\n\nAnalyze and thoroughly explain the Big O time complexity and space complexity of the given algorithm, identifying potential bottlenecks.",
+    "metadata": {
+      "description": "Analyze and thoroughly explain the Big O time complexity and space complexity.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "latex-equation-formatter",
+    "title": "LaTeX Equation Formatter",
+    "content": "# LaTeX Equation Formatter\n\nConvert this plain text or poorly-formatted mathematical expression into a valid, elegant LaTeX equation block.",
+    "metadata": {
+      "description": "Convert plain text mathematical expression into a valid LaTeX equation.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "latex",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "yaml-validator",
+    "title": "YAML Validator",
+    "content": "# YAML Validator\n\nCheck if the provided YAML structure is valid. If it contains syntax errors, identify the problematic lines and provide the corrected YAML.",
+    "metadata": {
+      "description": "Check if a provided YAML structure is valid, identifying problematic lines.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "yaml",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "outline-generator",
+    "title": "Outline Generator",
+    "content": "# Outline Generator\n\nCreate a comprehensive, structured, and logical hierarchical outline for a technical document or article encompassing the provided overarching topic.",
+    "metadata": {
+      "description": "Create a comprehensive, structured hierarchical outline for a topic.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "writing",
+        "productivity",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "presentation-slide-content",
+    "title": "Presentation Slides Writer",
+    "content": "# Presentation Slides Writer\n\nBreak down this article into 5-8 slides suitable for a presentation, emphasizing short bullet points and key takeaways per slide.",
+    "metadata": {
+      "description": "Break down an article into presentation slides with short bullet points.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "productivity",
+        "presentation",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "npm-script-explainer",
+    "title": "npm Script Explainer",
+    "content": "# npm Script Explainer\n\nExplain what this complex `package.json` script command is doing behind the scenes, referencing any specific CLI tools used.",
+    "metadata": {
+      "description": "Explain what a complex package.json script command does behind the scenes.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "javascript",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "code-to-pseudocode",
+    "title": "Pseudocode Converter",
+    "content": "# Pseudocode Converter\n\nConvert the provided code snippet into easily readable pseudocode that strictly outlines the algorithmic steps without language-specific syntax.",
+    "metadata": {
+      "description": "Convert a code snippet into readable pseudocode.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "algorithm",
+        "tactio"
+      ],
+      "globs": []
+    }
+  },
+  {
+    "id": "github-issue-template",
+    "title": "GitHub Issue Formatter",
+    "content": "# GitHub Issue Formatter\n\nGenerate a professional GitHub Bug Issue from the provided buggy behavior description, complete with steps to reproduce, expected behavior, and environment sections.",
+    "metadata": {
+      "description": "Generate a professional GitHub Bug Issue from a bug description.",
+      "author": "pureprompts",
+      "version": "1.0",
+      "category": "Tactio",
+      "tags": [
+        "external",
+        "coding",
+        "github",
+        "tactio"
       ],
       "globs": []
     }
