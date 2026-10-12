@@ -4,13 +4,13 @@ import { Navbar } from '@/components/navbar';
 import { Sidebar } from '@/components/sidebar';
 import { PromptCard } from '@/components/prompt-card';
 import { PromptCardSkeleton } from '@/components/prompt-card-skeleton';
-import { getPrompts, getCategories, getTags, getTotalPromptsCount } from '@/lib/mock-data';
+import { getPrompts, getCategories, getTags } from '@/lib/mock-data';
 import { ViewToggle } from '@/components/view-toggle';
 import { Search } from '@/components/search';
 import { ImagePromptBuilder } from '@/components/image-prompt-builder';
 import { useState, useEffect, useRef } from 'react';
 import { Prompt } from '@/lib/mock-data';
-import { LayoutGrid, Code, Image as ImageIcon, Library, Star } from 'lucide-react';
+import { LayoutGrid, Code, Image as ImageIcon, Library } from 'lucide-react';
 import Image from 'next/image';
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -148,7 +148,7 @@ export function PromptGallery() {
   }, [isLoading, hasMore, page, selectedCategories, selectedTags, searchQuery]); 
 
   const getFilteredPrompts = () => {
-    let sorted = [...prompts];
+    const sorted = [...prompts];
     if (filter === "trending") {
         return sorted.sort(() => 0.5 - Math.random());
     } else if (filter === "last_added") {

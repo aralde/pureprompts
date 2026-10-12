@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo } from "react"
+import { useIsTactioSource } from "@/lib/use-tactio-source"
 import { Copy, Wand2, X, Check, Download } from "lucide-react"
 
 // --- Definición de las opciones ---
@@ -74,16 +75,7 @@ const OPTIONS = {
 export function ImagePromptBuilder() {
   const [isOpen, setIsOpen] = useState(false)
   const [copied, setCopied] = useState(false)
-  const [isTactioSource, setIsTactioSource] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('source') === 'tactio') {
-         setIsTactioSource(true);
-      }
-    }
-  }, []);
+  const isTactioSource = useIsTactioSource();
 
   // Estado del prompt
   const [selections, setSelections] = useState({
