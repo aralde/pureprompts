@@ -4,6 +4,7 @@ import { X, Copy, Check, Download } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useState, useEffect } from 'react';
+import { useIsTactioSource } from '@/lib/use-tactio-source';
 import { cn } from '@/lib/utils';
 
 interface PromptDetailsModalProps {
@@ -15,16 +16,7 @@ interface PromptDetailsModalProps {
 export function PromptDetailsModal({ prompt, isOpen, onClose }: PromptDetailsModalProps) {
   const [copied, setCopied] = useState(false);
   const [imageOrientation, setImageOrientation] = useState<'portrait' | 'landscape' | 'square' | null>(null);
-  const [isTactioSource, setIsTactioSource] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('source') === 'tactio') {
-         setIsTactioSource(true);
-      }
-    }
-  }, []);
+  const isTactioSource = useIsTactioSource();
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const { naturalWidth, naturalHeight } = e.currentTarget;

@@ -1,9 +1,10 @@
 "use client"
 
 import { Prompt } from '@/lib/mock-data';
-import { User, Copy, Check, FileCode, Eye, Download } from 'lucide-react';
+import { User, Copy, Check, FileCode, Eye } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useIsTactioSource } from '@/lib/use-tactio-source';
 import { PromptDetailsModal } from './prompt-details-modal';
 import Image from 'next/image';
 
@@ -15,16 +16,7 @@ interface PromptCardProps {
 export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
   const [copied, setCopied] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isTactioSource, setIsTactioSource] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('source') === 'tactio') {
-         setIsTactioSource(true);
-      }
-    }
-  }, []);
+  const isTactioSource = useIsTactioSource();
 
   // We consider it an image prompt if it's explicitly in the 'Images' category,
   // which is how they are defined in external-image-prompts.json
