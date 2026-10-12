@@ -8,7 +8,7 @@ import { getPrompts, getCategories, getTags } from '@/lib/mock-data';
 import { ViewToggle } from '@/components/view-toggle';
 import { Search } from '@/components/search';
 import { ImagePromptBuilder } from '@/components/image-prompt-builder';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Prompt } from '@/lib/mock-data';
 import { LayoutGrid, Code, Image as ImageIcon, Library } from 'lucide-react';
 import Image from 'next/image';
@@ -106,7 +106,7 @@ export function PromptGallery() {
   const clearCategories = () => setSelectedCategories([]);
 
   // Load More Function
-  const loadMore = async () => {
+  const loadMore = useCallback(async () => {
       if (loadingRef.current || !hasMore) return;
       
       loadingRef.current = true;
@@ -128,7 +128,7 @@ export function PromptGallery() {
         loadingRef.current = false;
         setIsLoadingMore(false);
       }
-  };
+  }, [hasMore, page, selectedCategories, selectedTags, searchQuery]);
   
   // Intersection Observer
   useEffect(() => {
@@ -145,7 +145,7 @@ export function PromptGallery() {
       if (sentinel) observer.observe(sentinel);
       
       return () => observer.disconnect();
-  }, [isLoading, hasMore, page, selectedCategories, selectedTags, searchQuery]); 
+  }, [isLoading, hasMore, loadMore]);
 
   const getFilteredPrompts = () => {
     const sorted = [...prompts];
