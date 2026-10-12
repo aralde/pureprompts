@@ -1,9 +1,10 @@
 "use client"
 
 import { Prompt } from '@/lib/mock-data';
-import { User, Copy, Check, FileCode, Eye, Download } from 'lucide-react';
+import { User, Copy, Check, FileCode, Eye } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useIsTactioSource } from '@/lib/use-tactio-source';
 import { PromptDetailsModal } from './prompt-details-modal';
 import Image from 'next/image';
 
@@ -15,16 +16,7 @@ interface PromptCardProps {
 export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
   const [copied, setCopied] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isTactioSource, setIsTactioSource] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('source') === 'tactio') {
-         setIsTactioSource(true);
-      }
-    }
-  }, []);
+  const isTactioSource = useIsTactioSource();
 
   // We consider it an image prompt if it's explicitly in the 'Images' category,
   // which is how they are defined in external-image-prompts.json
@@ -57,10 +49,12 @@ export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
       <div className="group relative flex items-center justify-between border border-border bg-card p-4 transition-colors hover:border-foreground/50 animate-fade-in-up">
          {(isImageCategory && imageSrc) && (
             <div className="relative w-16 h-16 mr-4 flex-shrink-0 rounded-md overflow-hidden bg-muted/20 hidden sm:block border border-border">
-               <img 
-                  src={imageSrc} 
+               <Image
+                  src={imageSrc}
                   alt={`${prompt.title} preview`}
-                  className="object-cover w-full h-full"
+                  fill
+                  sizes="64px"
+                  className="object-cover"
                />
             </div>
          )}
@@ -137,11 +131,13 @@ export function PromptCard({ prompt, variant = "grid" }: PromptCardProps) {
           className="group relative inline-block w-full mb-6 break-inside-avoid cursor-pointer overflow-hidden rounded-md border border-border bg-card transition-all hover:border-foreground/50 animate-fade-in-up"
         >
           {/* Imagen completa, altura auto para Masonry */}
-          <img 
-             src={imageSrc} 
+          <Image
+             src={imageSrc}
              alt={`${prompt.title} preview`}
+             width={0}
+             height={0}
+             sizes="(max-width: 768px) 100vw, 33vw"
              className="w-full h-auto block object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-             loading="lazy"
           />
           
           {/* Overlay gradiente inferior para que destaque el botón */}

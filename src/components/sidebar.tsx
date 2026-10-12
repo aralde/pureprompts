@@ -18,7 +18,7 @@ export function Sidebar({
       <div className="py-6 pr-6 lg:py-8">
 
         <h4 className="mb-6 text-xs font-bold tracking-widest text-muted-foreground uppercase font-mono">
-            // Tags
+            {'// Tags'}
         </h4>
         <div className="flex flex-wrap gap-2 px-1">
              {tags.slice(0, 20).map(tag => {

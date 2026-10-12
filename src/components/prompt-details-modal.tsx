@@ -4,7 +4,9 @@ import { X, Copy, Check, Download } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useState, useEffect } from 'react';
+import { useIsTactioSource } from '@/lib/use-tactio-source';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface PromptDetailsModalProps {
   prompt: Prompt;
@@ -15,16 +17,7 @@ interface PromptDetailsModalProps {
 export function PromptDetailsModal({ prompt, isOpen, onClose }: PromptDetailsModalProps) {
   const [copied, setCopied] = useState(false);
   const [imageOrientation, setImageOrientation] = useState<'portrait' | 'landscape' | 'square' | null>(null);
-  const [isTactioSource, setIsTactioSource] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('source') === 'tactio') {
-         setIsTactioSource(true);
-      }
-    }
-  }, []);
+  const isTactioSource = useIsTactioSource();
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const { naturalWidth, naturalHeight } = e.currentTarget;
@@ -108,11 +101,14 @@ export function PromptDetailsModal({ prompt, isOpen, onClose }: PromptDetailsMod
                 "relative rounded-md overflow-hidden bg-muted/20 border border-border shrink-0 flex items-center justify-center",
                 imageOrientation === 'portrait' ? "w-fit max-w-full md:max-w-[45%] self-center md:self-start" : "w-fit max-w-full self-center"
               )}>
-                <img 
-                   src={imageSrc} 
+                <Image
+                   src={imageSrc}
                    alt={`${prompt.title} preview`}
+                   width={0}
+                   height={0}
+                   sizes="(max-width: 768px) 100vw, 50vw"
                    className={cn(
-                     "object-contain w-auto max-w-full",
+                     "object-contain w-auto h-auto max-w-full",
                      imageOrientation === 'portrait' ? "max-h-[60vh] md:max-h-[70vh]" : "max-h-[50vh] sm:max-h-96"
                    )}
                    onLoad={handleImageLoad}
