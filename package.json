@@ -12,7 +12,7 @@
     "gallery"
   ],
   "author": "Ariel D.",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
