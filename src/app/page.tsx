@@ -4,6 +4,7 @@
 // h1, description, and JSON-LD on first load without executing JavaScript.
 
 import { PromptGallery } from '@/components/prompt-gallery';
+import Link from 'next/link';
 
 // CollectionPage JSON-LD for the homepage
 const collectionPageJsonLd = {
@@ -62,10 +63,10 @@ export default function Home() {
           </p>
           <nav aria-label="Prompt categories">
             <ul>
-              <li><a href="/?category=Images">Image Generation Prompts</a></li>
-              <li><a href="/?category=Coding">Coding Prompts</a></li>
-              <li><a href="/?category=General">General AI Prompts</a></li>
-              <li><a href="/?category=Tactio">Tactio Prompts</a></li>
+              <li><Link href="/?category=Images">Image Generation Prompts</Link></li>
+              <li><Link href="/?category=Coding">Coding Prompts</Link></li>
+              <li><Link href="/?category=General">General AI Prompts</Link></li>
+              <li><Link href="/?category=Tactio">Tactio Prompts</Link></li>
             </ul>
           </nav>
         </div>

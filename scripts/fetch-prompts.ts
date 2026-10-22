@@ -35,8 +35,8 @@ const CSV_URL = 'https://raw.githubusercontent.com/f/prompts.chat/main/prompts.c
 const OUTPUT_PATH = path.join(__dirname, '../src/data/external-prompts.json');
 
 // Improved CSV Parser
-function parseCsv(csvText: string): any[] {
-    const result: any[] = [];
+function parseCsv(csvText: string): Record<string, string>[] {
+    const result: string[][] = [];
     let currentField = '';
     let inQuotes = false;
     let currentRow: string[] = [];
@@ -81,7 +81,7 @@ function parseCsv(csvText: string): any[] {
     const headers = result[0].map((h: string) => h.toLowerCase().trim().replace(/^"|"$/g, ''));
 
     return result.slice(1).map(values => {
-        const row: any = {};
+        const row: Record<string, string> = {};
         headers.forEach((header: string, index: number) => {
             row[header] = values[index];
         });
@@ -112,7 +112,7 @@ async function main() {
         const csvText = await response.text();
         console.log(`Fetched ${csvText.length} bytes.`);
 
-        const rows = parseCsv(csvText) as CsvRow[];
+        const rows = parseCsv(csvText) as unknown as CsvRow[];
         console.log(`Parsed ${rows.length} prompts.`);
 
         const prompts: Prompt[] = rows

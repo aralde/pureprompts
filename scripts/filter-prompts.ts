@@ -11,7 +11,7 @@ interface Prompt {
         category?: string;
         tags?: string[];
     };
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 const EXTERNAL_PROMPTS_PATH = path.join(process.cwd(), 'src', 'data', 'external-prompts.json');
@@ -76,7 +76,7 @@ function containsPattern(text: string, patterns: RegExp[]): string | null {
 async function main() {
     console.log('Reading external-prompts.json...');
     const rawData = fs.readFileSync(EXTERNAL_PROMPTS_PATH, 'utf-8');
-    let prompts: Prompt[] = JSON.parse(rawData);
+    const prompts: Prompt[] = JSON.parse(rawData);
 
     console.log(`Total prompts loaded: ${prompts.length}`);
 
