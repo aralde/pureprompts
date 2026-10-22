@@ -11,8 +11,8 @@
     "prompt-engineering",
     "gallery"
   ],
-  "author": "Ariel D.",
-  "license": "MIT",
+  "author": "Aralde <aralde.git@gmail.com>",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
